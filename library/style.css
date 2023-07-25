@@ -8,20 +8,17 @@ a {
   text-decoration: none;
 }
 
-h1 {
-  color: #FFF;
+p {
+  color: #000;
   text-align: center;
-  font-family: Forum;
-  font-size: 40px;
+  font-family: Inter;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 50px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  width: 370px;
+  line-height: 40px;
 }
 
-h2 {
+h1 {
   color: #FFF;
   text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   font-family: Forum;
@@ -32,10 +29,38 @@ h2 {
   letter-spacing: 0.6px;
 }
 
+h2 {
+  color: #0C0C0E;
+  font-family: Forum;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  display: inline-block;
+  position: relative;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  background: #0C0C0E;
+  left: 50%;
+  bottom: -20px;
+  width: 50px;
+  height: 1px;
+  transform: translateX(-50%);
+}
+
 header {
   width: 100%;
   background-color: #0C0C0E;
   display: inline-block;
+}
+
+.container {
+  margin: auto 20px;
+  padding: 20px 0 40px;
 }
 
 .header-container {
@@ -43,6 +68,11 @@ header {
   justify-content: space-between;
   align-items: center;
   margin: 20px;
+}
+
+.logo-title:hover {
+  transition: 0.3s;
+  color: #BB945F;
 }
 
 .nav-container {
@@ -69,6 +99,10 @@ header {
   font-weight: 400;
   line-height: 50px;
 }
+.nav-link:hover {
+  transition: 0.3s;
+  color: #BB945F;
+}
 
 #section-welcome {
   background: no-repeat linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.1) 100%), url(Images/welcome-1440.jpg);
@@ -77,6 +111,7 @@ header {
 }
 #section-welcome .container {
   display: inline-block;
+  margin: auto;
 }
 
 .welcome-title-container {
@@ -88,7 +123,69 @@ header {
   justify-content: center;
   align-items: center;
 }
+.welcome-title-container p {
+  color: #FFF;
+  text-align: center;
+  font-family: Forum;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  width: 370px;
+}
 
 .nowrap {
   white-space: nowrap;
+}
+
+#section-about .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-paragraph {
+  margin-top: 40px;
+}
+
+.about-images-container {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.carousel-pagination {
+  display: flex;
+  margin-top: 40px;
+}
+
+.separate-container {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.inner-container {
+  width: 16px;
+  height: 16px;
+  background-color: #0C0C0E;
+  border-radius: 50%;
+}
+.inner-container.active {
+  background-color: #BB945F;
+}
+
+#section-favorites .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#section-favorites p {
+  align-self: start;
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */
