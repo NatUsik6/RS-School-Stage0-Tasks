@@ -63,9 +63,9 @@
                             inside </p>
                     </div>
                     <div class="about-images-container">
-                        <img  src="Images/image 1.png" alt="Women in library">
-                        <img  src="Images/image 2.png" alt="Statues">
-                        <img  src="Images/image 3.png" alt="Books in library">
+                        <img src="Images/image 1.png" alt="Women in library">
+                        <img src="Images/image 2.png" alt="Statues">
+                        <img src="Images/image 3.png" alt="Books in library">
                     </div>
                     <div class="carousel-pagination">
                         <div class="separate-container">
@@ -83,12 +83,40 @@
             <section id="section-favorites">
                 <div class="container">
                     <h2>Favorites</h2>
-                    <p>Pick favorites of season</p>
+                    <p class="seasons-selector-title">Pick favorites of season</p>
                     <form>
-                       <input type="radio" name="seasons" value="winter">
-                       
+                        <div class="input-wrapper">
+                            <input class="season-radio" type="radio" id="seasons-winter" name="seasons" value="winter">
+                            <label class="season-title" for="seasons-winter">Winter</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input class="season-radio" type="radio" id="seasons-spring" name="seasons" value="spring">
+                            <label class="season-title" for="seasons-spring">Spring</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input class="season-radio" type="radio" id="seasons-summer" name="seasons" value="summer">
+                            <label class="season-title" for="seasons-summer">Summer</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input class="season-radio" type="radio" id="seasons-autumn" name="seasons" value="autumn">
+                            <label class="season-title" for="seasons-autumn">Autumn</label>
+                        </div>
                     </form>
-                    
+                    <div class="favorites-items">
+                        <div class="book-container">
+                            <div class="book-text-wrapper">
+                                <h3>Staff Picks</h3>
+                                <p>The Book Eaters <span>By Sunyi Dean</span></p>
+                                <p class="description-book">An unusual sci-fi story about a book eater woman who tries desperately to save her
+                                    dangerous mind-eater son from tradition and certain death. Complete with
+                                    dysfunctional family values, light Sapphic romance, and a strong, complex
+                                    protagonist. Not for the faint of heart.</p>
+                                <button class="button-buy">Buy</button>
+                            </div>
+                            <img class="book-img" src="Books/book.png" alt="book">
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </div>

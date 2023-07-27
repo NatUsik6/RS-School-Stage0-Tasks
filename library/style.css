@@ -40,16 +40,38 @@ h2 {
   text-transform: capitalize;
   display: inline-block;
   position: relative;
+  height: 60px;
 }
 h2::after {
   content: "";
   position: absolute;
   background: #0C0C0E;
   left: 50%;
-  bottom: -20px;
+  bottom: 0;
   width: 50px;
   height: 1px;
   transform: translateX(-50%);
+}
+
+h3 {
+  color: #000;
+  font-family: Forum;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  position: relative;
+}
+h3::after {
+  content: "";
+  position: absolute;
+  background: #BB945F;
+  width: 60px;
+  height: 1px;
+  left: 0;
+  bottom: 0;
 }
 
 header {
@@ -184,8 +206,118 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 40px;
 }
-#section-favorites p {
+#section-favorites .seasons-selector-title {
   align-self: start;
   font-weight: 700;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  align-self: start;
+  gap: 90px;
+}
+
+.season-radio {
+  accent-color: #000;
+  background-color: #000;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.season-title {
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.season-radio:checked + .season-title {
+  font-weight: 700;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.favorites-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.favorites-items p {
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: left;
+}
+.favorites-items span {
+  text-transform: capitalize;
+  display: block;
+}
+.favorites-items .description-book {
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.book-container {
+  display: flex;
+  border: 1px solid #000;
+  padding: 15px 0 15px 20px;
+  gap: 15px;
+}
+
+.book-text-wrapper {
+  width: 355px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: start;
+}
+
+.book-img {
+  width: 200px;
+  height: 300px;
+  align-self: flex-end;
+  margin-right: -40px;
+  margin-bottom: -16px;
+}
+
+.button-buy {
+  color: #0C0C0E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  padding: 9px 27px;
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  background-color: transparent;
+  margin-top: -5px;
+}
+.button-buy:hover {
+  border-color: #BB945F;
+  background-color: #BB945F;
 }/*# sourceMappingURL=style.css.map */
