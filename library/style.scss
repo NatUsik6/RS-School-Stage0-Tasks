@@ -343,8 +343,6 @@ form {
     border-radius: 2px;
     border: 1px solid;
     background-color: transparent;
-    position: absolute;
-    bottom: 0;
 
     &:hover {
         border-color: #BB945F;
@@ -356,11 +354,15 @@ form {
 .button-buy {
     color: #0C0C0E;
     border-color: #0C0C0E;
+    position: absolute;
+    bottom: 0;
 }
 
 .button-own {
     color: #BB945F;
     border-color: #BB945F;
+    position: absolute;
+    bottom: 0;
 }
 
 .disabled {
@@ -511,4 +513,183 @@ form {
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+
+.find-card-library-title {
+    font-size: 30px;
+    letter-spacing: 0.6px;
+}
+
+#section-library-card {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+.library-card-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.find-card-library-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.white-board {
+    border: 3px solid #BB945F;
+    padding: 20px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.gold-board {
+    width: 560px;
+    height: 272px;
+    background: #BB945F;
+    padding: 20px 20px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gold-board-title {
+    font-family: Forum;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+
+.common-input-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input-text {
+    width: 520px;
+    height: 66px;
+    border-radius: 10px;
+    border: 0;
+    color: #8E8E8E;
+    font-family: Forum;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+    padding: 20px;
+}
+
+.button-check {
+    font-size: 20px;
+    border-radius: 2px;
+    padding: 10px 40px;
+}
+
+.get-card-container {
+    width: 456px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 35px;
+}
+
+.get-card-title {
+    font-family: Forum;
+    font-size: 30px;
+    line-height: normal;
+    letter-spacing: 0.6px;
+}
+
+.get-card-description {
+    letter-spacing: 0.4px;
+    text-align: right;
+}
+
+.library-card-button {
+    display: flex;
+    gap: 20px;
+}
+
+.button-sign-up {
+    padding: 9px 15.5px;
+}
+
+.button-log-in {
+    padding: 9px 20px;
+}
+
+footer {
+    background: #0C0C0E;
+}
+
+.footer-container {
+    padding-bottom: 44px;
+}
+
+.upper-part-footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.address-social-network {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.library-address {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    width: 225px;
+    text-align: left;
+}
+
+.icons-social-network {
+    height: 40px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.opening-hours {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opening-hours-title {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    width: 150px;
+    text-align: right;
+
+    span {
+        white-space: nowrap;
+    }
+}
+
+.line-footer {
+    height: 1px;
+    background: #FFF;
+    margin-top: 30px;
+    margin-bottom: 44px;
 }
