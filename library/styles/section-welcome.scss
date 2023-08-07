@@ -1,0 +1,37 @@
+#section-welcome {
+    background: no-repeat linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%), url(../Images/welcome-1440.jpg);
+    background-size: 100% 50%, cover;
+    height: 600px;
+
+    .container {
+        padding-left: 0;
+    }
+}
+
+.welcome-title-container {
+    background: #0C0C0E;
+    width: 600px;
+    height: 220px;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: #FFF;
+        text-align: center;
+        font-family: Forum;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        width: 370px;
+        height: 150px;
+    }
+}
+
+.nowrap {
+    white-space: nowrap;
+}

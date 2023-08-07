@@ -1,0 +1,146 @@
+#section-favorites {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .seasons-selector-title {
+        align-self: start;
+        font-weight: 700;
+        line-height: normal;
+    }
+}
+
+.season-radio {
+    accent-color: #000;
+    background-color: #000;
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.season-title {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    .season-radio:checked+& {
+        font-weight: 700;
+    }
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.favorites-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+
+    p {
+        color: #000;
+        font-family: Inter;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-align: left;
+    }
+
+    span {
+        text-transform: capitalize;
+        display: block;
+    }
+
+    .description-book {
+        color: #000;
+        font-family: Inter;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 40px;
+        letter-spacing: 2px;
+        text-transform: capitalize;
+    }
+}
+
+.book-container {
+    position: relative;
+    display: flex;
+    padding: 15px 0 15px 20px;
+    gap: 15px;
+    height: 555px;
+    width: 590px;
+    margin: auto;
+    
+    @media screen and (max-width: 1260px) {
+        margin: auto;
+    }
+}
+
+.book-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 555px;
+    width: 550px;
+    border: 1px solid #000;
+}
+
+.book-text-wrapper {
+    width: 357px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: start;
+    position: relative;
+}
+
+.book-img {
+    width: 200px;
+    height: 300px;
+    align-self: flex-end;
+    margin-right: -40px;
+    margin-bottom: -16px;
+    z-index: 1;
+}
+
+.button-buy {
+    color: #0C0C0E;
+    border-color: #0C0C0E;
+    position: absolute;
+    bottom: 0;
+}
+
+.button-own {
+    padding: 7px 23px;
+    color: #BB945F;
+    border-color: #BB945F;
+    position: absolute;
+    cursor: auto;
+    bottom: 0;
+
+    &:hover {
+        color: #BB945F;
+        border-color: #BB945F;
+        background-color: transparent;
+    }
+}
+
+.disabled {
+    display: none;
+}

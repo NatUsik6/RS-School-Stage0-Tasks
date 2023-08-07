@@ -1,0 +1,104 @@
+footer {
+    background: #0C0C0E;
+}
+
+.footer-container {
+    padding-bottom: 44px;
+}
+
+.upper-part-footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.address-social-network {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.library-address {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    width: 225px;
+    text-align: left;
+    display: inline-block;
+}
+
+.icons-social-network {
+    display: flex;
+    gap: 15px;
+}
+
+.social-network {
+    &:hover {
+        transition: .3s;
+        color: #BB945F;
+        cursor: pointer
+    }
+}
+
+.opening-hours {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opening-hours-title {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    width: 150px;
+    text-align: right;
+
+    span {
+        white-space: nowrap;
+    }
+}
+
+.line-footer {
+    height: 1px;
+    background: #FFF;
+    margin-top: 30px;
+    margin-bottom: 44px;
+}
+
+.under-part-footer-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.year-of-publication {
+    color: #FFF;
+    line-height: 20px;
+    letter-spacing: 2px;
+}
+
+.name-courses {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.creator-name {
+    font-family: Inter;
+    color: #FFF;
+    line-height: 20px;
+    letter-spacing: 2px;
+}

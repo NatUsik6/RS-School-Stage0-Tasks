@@ -1,0 +1,67 @@
+#section-coffee-shop .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+#section-coffee-shop p {
+  letter-spacing: 2px;
+}
+#section-coffee-shop span {
+  white-space: nowrap;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.shop-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.shop-list-item {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.coffee-tea-menu-stick {
+  width: 100px;
+  height: 1px;
+  background: #BB945F;
+}
+
+.menu-container h2 {
+  color: #BB945F;
+  height: auto;
+}
+.menu-container h2::after {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.coffee-tea-menu .shop-item-title {
+  width: 197px;
+  text-align: left;
+}
+
+.price {
+  font-family: Forum;
+}
+
+.deserts h2 {
+  text-align: right;
+}
+.deserts .shop-list {
+  align-items: end;
+}/*# sourceMappingURL=section-coffee-shop.css.map */
