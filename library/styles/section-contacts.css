@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 44px;
 }
 
 .contacts-info {
@@ -12,6 +12,12 @@
 }
 .contacts-info p {
   text-align: left;
+}
+@media screen and (max-width: 1023px) {
+  .contacts-info {
+    flex-direction: column;
+    gap: 100px;
+  }
 }
 
 .text-info {
@@ -60,4 +66,10 @@
 }
 .senior-stuff-name span {
   font-weight: 700;
+}
+
+.image-map {
+  width: 696px;
+  height: 414px;
+  align-self: center;
 }/*# sourceMappingURL=section-contacts.css.map */

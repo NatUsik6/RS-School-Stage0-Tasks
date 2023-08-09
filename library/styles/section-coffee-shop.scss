@@ -15,10 +15,21 @@
     }
 }
 
+.coffee-shop-title {
+    @media screen and (max-width: 1023px) {
+        width: 732px;
+    }
+}
+
 .menu-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    @media screen and (max-width: 1023px) {
+        flex-direction: column;
+        gap: 40px;
+    }
 }
 
 .shop-list {
@@ -26,6 +37,10 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    @media screen and (max-width: 1023px) {
+        white-space: nowrap;
+    }
 }
 
 .shop-list-item {
