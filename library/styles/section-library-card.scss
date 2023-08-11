@@ -11,6 +11,12 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    @media screen and (max-width: 1023px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 21px;
+    }
 }
 
 .find-card-library-container {
@@ -87,6 +93,11 @@
     flex-direction: column;
     align-items: end;
     gap: 35px;
+
+    @media screen and (max-width: 1023px) {
+        align-items: center;
+        gap: 40px;
+    }
 }
 
 .get-card-title {
@@ -99,6 +110,11 @@
 .get-card-description {
     letter-spacing: 0.4px;
     text-align: right;
+
+    @media screen and (max-width: 1023px) {
+        width: 600px;
+        text-align: center;
+    }
 }
 
 .library-card-button {

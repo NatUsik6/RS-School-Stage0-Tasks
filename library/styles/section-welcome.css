@@ -1,6 +1,7 @@
 #section-welcome {
-  background: no-repeat linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.1) 100%), url(../Images/welcome-1440.jpg);
+  background: no-repeat linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.1) 100%), url(../Images/85c1859f825ed82614b2036bc8be037f.jpg);
   background-size: 100% 50%, cover;
+  background-position: top, center;
   height: 600px;
 }
 #section-welcome .container {

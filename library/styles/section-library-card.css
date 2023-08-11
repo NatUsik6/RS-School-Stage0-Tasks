@@ -10,6 +10,13 @@
   justify-content: space-between;
   width: 100%;
 }
+@media screen and (max-width: 1023px) {
+  .library-card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 21px;
+  }
+}
 
 .find-card-library-container {
   display: flex;
@@ -86,6 +93,12 @@
   align-items: end;
   gap: 35px;
 }
+@media screen and (max-width: 1023px) {
+  .get-card-container {
+    align-items: center;
+    gap: 40px;
+  }
+}
 
 .get-card-title {
   font-family: Forum;
@@ -97,6 +110,12 @@
 .get-card-description {
   letter-spacing: 0.4px;
   text-align: right;
+}
+@media screen and (max-width: 1023px) {
+  .get-card-description {
+    width: 600px;
+    text-align: center;
+  }
 }
 
 .library-card-button {

@@ -92,6 +92,12 @@ footer {
   left: 50%;
   transform: translate(-50%);
 }
+@media screen and (max-width: 1023px) {
+  .name-courses {
+    position: static;
+    transform: translate(0);
+  }
+}
 
 .creator-name {
   font-family: Inter;

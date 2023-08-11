@@ -1,8 +1,9 @@
 header {
-    // position: absolute;
     width: 100%;
     background-color: #0C0C0E;
     display: inline-block;
+    position: relative;
+    overflow-x: clip;
 }
 
 .header-container {
@@ -25,7 +26,6 @@ header {
             right: 0;
         }
     }
-
 }
 
 .logo-title:hover {
