@@ -5,7 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/favicon.ico">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/section-welcome.css">
+    <link rel="stylesheet" href="styles/section-about.css">
+    <link rel="stylesheet" href="styles/section-favorites.css">
+    <link rel="stylesheet" href="styles/section-coffee-shop.css">
+    <link rel="stylesheet" href="styles/section-contacts.css">
+    <link rel="stylesheet" href="styles/section-library-card.css">
+    <link rel="stylesheet" href="styles/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
@@ -26,7 +34,7 @@
                 </a>
             </div>
             <div class="nav-container">
-                <nav>
+                <nav class="nav-menu">
                     <ul class="nav-list">
                         <li class="nav-item"><a class="nav-link" href="#section-about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#section-favorites">Favorites</a></li>
@@ -40,6 +48,13 @@
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z"
                             fill="white" />
+                    </svg>
+                </div>
+                <div class="burger-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="22" viewBox="0 0 45 22" fill="none">
+                        <line y1="1" x2="45" y2="1" stroke="white" stroke-width="2" />
+                        <line y1="11" x2="45" y2="11" stroke="white" stroke-width="2" />
+                        <line y1="21" x2="45" y2="21" stroke="white" stroke-width="2" />
                     </svg>
                 </div>
             </div>
@@ -64,20 +79,32 @@
                             inside </p>
                     </div>
                     <div class="about-images-container">
-                        <img src="Images/image1.png" alt="Women in library">
-                        <img src="Images/image2.png" alt="Statues">
-                        <img src="Images/image3.png" alt="Books in library">
-                    </div>
-                    <div class="carousel-pagination">
-                        <div class="separate-container">
-                            <div class="inner-container active"></div>
+                        <button class="arrow-button arrow-left"></button>
+                        <div class="about-images-subcontainer">
+                            <div class="about-images-items">
+                                <img src="Images/image1.png" alt="Women in library">
+                                <img class="images-item" src="Images/image2.png" alt="Statues">
+                                <img class="images-item" src="Images/image3.png" alt="Books in library">
+                            </div>
+                            <div class="carousel-pagination">
+                                <div class="separate-container">
+                                    <div class="inner-container active"></div>
+                                </div>
+                                <div class="separate-container">
+                                    <div class="inner-container"></div>
+                                </div>
+                                <div class="separate-container">
+                                    <div class="inner-container"></div>
+                                </div>
+                                <div class="separate-container separate-container-extra">
+                                    <div class="inner-container"></div>
+                                </div>
+                                <div class="separate-container separate-container-extra">
+                                    <div class="inner-container"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="separate-container">
-                            <div class="inner-container"></div>
-                        </div>
-                        <div class="separate-container">
-                            <div class="inner-container"></div>
-                        </div>
+                        <button class="arrow-button arrow-right"></button>
                     </div>
                 </div>
             </section>
@@ -312,7 +339,7 @@
             <section id="section-coffee-shop">
                 <div class="container">
                     <h2>Coffee shop</h2>
-                    <p>In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and
+                    <p class="coffee-shop-title">In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and
                         friendly conversation. <span>You can get a favorite book and read in coffee shop.</span> Our
                         barista to cook you best coffee, and also you can try desserts from bakery.</p>
                     <div class="menu-container">
@@ -320,7 +347,7 @@
                             <h2>Coffee & Tea</h2>
                             <ul class="shop-list">
                                 <li class="shop-list-item">
-                                    <p class="shop-item-title">Cold Brew coffee</p>
+                                    <p class="shop-item-title">Cold Brew Coffee</p>
                                     <div class="coffee-tea-menu-stick"></div>
                                     <p class="price">$3</p>
                                 </li>
@@ -409,7 +436,7 @@
                                         <span>Amanda Hirst</span></a></p>
                             </div>
                         </div>
-                        <img src="Images/Rectangle4.png" alt="map">
+                        <img class="image-map" src="Images/Rectangle4.png" alt="map">
                     </div>
                 </div>
             </section>
@@ -449,11 +476,16 @@
         <div class="footer-container container">
             <div class="upper-part-footer-container">
                 <div class="address-social-network">
-                    <p><a class="library-address" href="https://www.google.com/maps/place/Brooklyn+Public+Library+-+Brooklyn+Heights+Branch/@40.695678,-73.991255,18z/data=!4m6!3m5!1s0x89c25a49b6395abd:0x5b6c5e44eb578313!8m2!3d40.6956458!4d-73.9912976!16s%2Fg%2F11c4592c3x?hl=ru&entry=tts&shorturl=1">286 Cadman Plaza, New York, NY 11238, United States</a></p>
+                    <p><a class="library-address"
+                            href="https://www.google.com/maps/place/Brooklyn+Public+Library+-+Brooklyn+Heights+Branch/@40.695678,-73.991255,18z/data=!4m6!3m5!1s0x89c25a49b6395abd:0x5b6c5e44eb578313!8m2!3d40.6956458!4d-73.9912976!16s%2Fg%2F11c4592c3x?hl=ru&entry=tts&shorturl=1">286
+                            Cadman Plaza, New York, NY 11238, United States</a></p>
                     <ul class="icons-social-network">
-                        <li><a href="https://twitter.com/?lang=ru"><img class="social-network" src="assets/u_twitter-alt.svg" alt="twitter"></a></li>
-                        <li><a href="https://www.instagram.com/nat_usik_/"><img class="social-network" src="assets/u_instagram.svg" alt="instagram"></a></li>
-                        <li><a href="https://www.facebook.com/"><img class="social-network" src="assets/u_facebook-f.svg" alt="facebook"></a></li>
+                        <li><a href="https://twitter.com/?lang=ru"><img class="social-network"
+                                    src="assets/u_twitter-alt.svg" alt="twitter"></a></li>
+                        <li><a href="https://www.instagram.com/nat_usik_/"><img class="social-network"
+                                    src="assets/u_instagram.svg" alt="instagram"></a></li>
+                        <li><a href="https://www.facebook.com/"><img class="social-network"
+                                    src="assets/u_facebook-f.svg" alt="facebook"></a></li>
                     </ul>
                 </div>
                 <div class="opening-hours">
