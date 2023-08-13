@@ -43,7 +43,7 @@
     height: 24px;
     border: 0;
     display: none;
-    cursor: pointer; 
+    cursor: pointer;
 
     @media screen and (max-width: 1439px) {
         display: block;
@@ -51,15 +51,15 @@
 }
 
 .arrow-left {
-    background: url(../assets/carret_left.svg);
+    background: url(../assets/Carret_Left.svg);
 }
 
 .arrow-right {
-    background: url(../assets/carret_right.svg);
+    background: url(../assets/Carret_Right.svg);
 }
 
 .images-item {
-    @media  screen and (max-width: 1439px) {
+    @media screen and (max-width: 1439px) {
         display: none;
     }
 }

@@ -51,11 +51,11 @@
 }
 
 .arrow-left {
-  background: url(../assets/carret_left.svg);
+  background: url(../assets/Carret_Left.svg);
 }
 
 .arrow-right {
-  background: url(../assets/carret_right.svg);
+  background: url(../assets/Carret_Right.svg);
 }
 
 @media screen and (max-width: 1439px) {
