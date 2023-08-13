@@ -21,10 +21,26 @@ header {
     height: 480px;
     right: -100%;
     top: 90px;
+    z-index: 2;
   }
   .burger-menu-open .nav-menu {
     right: 0;
   }
+}
+
+.overlay {
+  visibility: collapse;
+  opacity: 0;
+  position: fixed;
+  top: 90px;
+  left: 0;
+  height: 100vh;
+  z-index: 1;
+}
+.burger-menu-open .overlay {
+  visibility: visible;
+  opacity: 1;
+  width: 100vw;
 }
 
 .logo-title:hover {
@@ -70,9 +86,45 @@ header {
 
 .burger-button {
   display: none;
+  width: 45px;
+  height: 20px;
+  cursor: pointer;
 }
 @media screen and (max-width: 1024px) {
   .burger-button {
-    display: block;
+    display: flex;
+    align-items: center;
   }
+  .burger-button .burger-button-lines,
+  .burger-button .burger-button-lines::before,
+  .burger-button .burger-button-lines::after {
+    display: block;
+    position: absolute;
+    width: 45px;
+    height: 2px;
+    background-color: #fff;
+    transition-duration: 0.3s;
+  }
+}
+
+.burger-button-lines::before {
+  content: "";
+  top: -10px;
+}
+
+.burger-button-lines::after {
+  content: "";
+  top: 10px;
+}
+
+.burger-menu-open .burger-button-lines {
+  transform: rotate(45deg);
+}
+.burger-menu-open .burger-button-lines::before {
+  top: 0;
+  transform: rotate(0);
+}
+.burger-menu-open .burger-button-lines::after {
+  top: 0;
+  transform: rotate(90deg);
 }/*# sourceMappingURL=header.css.map */

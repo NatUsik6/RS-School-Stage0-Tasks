@@ -18,3 +18,6 @@ function disableBurgerMenuOpen() {
 
     document.body.style.overflow = "";
 }
+
+const overlay = document.querySelector(".overlay");
+overlay.addEventListener("click", disableBurgerMenuOpen);
