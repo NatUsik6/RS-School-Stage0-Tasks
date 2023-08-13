@@ -42,7 +42,8 @@
     width: 24px;
     height: 24px;
     border: 0;
-    display: none; 
+    display: none;
+    cursor: pointer; 
 
     @media screen and (max-width: 1439px) {
         display: block;

@@ -69,7 +69,8 @@
 }
 
 .image-map {
-  width: 696px;
+  max-width: 696px;
+  width: 100%;
   height: 414px;
   align-self: center;
 }/*# sourceMappingURL=section-contacts.css.map */
