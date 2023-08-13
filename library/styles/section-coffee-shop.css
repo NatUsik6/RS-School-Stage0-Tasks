@@ -11,12 +11,6 @@
   white-space: nowrap;
 }
 
-@media screen and (max-width: 1023px) {
-  .coffee-shop-title {
-    width: 732px;
-  }
-}
-
 .menu-container {
   display: flex;
   justify-content: space-between;

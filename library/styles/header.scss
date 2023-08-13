@@ -21,10 +21,27 @@ header {
         height: 480px;
         right: -100%;
         top: 90px;
+        z-index: 2;
 
         .burger-menu-open & {
             right: 0;
         }
+    }
+}
+
+.overlay {
+    visibility: collapse;
+    opacity: 0;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    height: 100vh;
+    z-index: 1;
+
+    .burger-menu-open & {
+        visibility: visible;
+        opacity: 1;
+        width: 100vw;
     }
 }
 
@@ -71,8 +88,49 @@ header {
 
 .burger-button {
     display: none;
+    width: 45px;
+    height: 20px;
+    cursor: pointer;
 
     @media screen and (max-width: 1024px) {
-        display: block;
+        display: flex;
+        align-items: center;
+
+        .burger-button-lines,
+        .burger-button-lines::before,
+        .burger-button-lines::after {
+            display: block;
+            position: absolute;
+            width: 45px;
+            height: 2px;
+            background-color: #fff;
+            transition-duration: .3s;
+        }
+    }
+}
+
+.burger-button-lines::before {
+    content: '';
+    top: -10px;
+}
+
+.burger-button-lines::after {
+    content: '';
+    top: 10px;
+}
+
+.burger-menu-open {
+    .burger-button-lines {
+        transform: rotate(45deg);
+    }
+
+    .burger-button-lines::before {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    .burger-button-lines::after {
+        top: 0;
+        transform: rotate(90deg);
     }
 }
