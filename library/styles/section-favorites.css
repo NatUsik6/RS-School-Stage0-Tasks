@@ -80,10 +80,14 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 40px;
-  animation: fadeEffect 0.5s ease;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
-@keyframes fadeEffect {
+.tab-disabled {
+  display: none;
+}
+
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -155,4 +159,28 @@
 
 .disabled {
   display: none;
+}
+
+.buy-a-card {
+  width: 650px;
+  height: 540px;
+}
+
+.header-buy-a-card {
+  background-color: #0C0C0E;
+  display: flex;
+  justify-content: space-between;
+}
+.header-buy-a-card h2 {
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.payment-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }/*# sourceMappingURL=section-favorites.css.map */

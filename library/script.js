@@ -35,7 +35,7 @@ function moveSliderLeft() {
     if (sliderPosition == 0) {
         return;
     }
-    
+
     sliderPosition--;
     moveSlider();
 }
@@ -68,6 +68,6 @@ seasonSelectors.forEach(seasonSelector => seasonSelector.addEventListener("click
 const seasonContainers = document.querySelectorAll(".season-container");
 
 function changeSeasonTab() {
-    seasonContainers.forEach(seasonContainer => seasonContainer.classList.add("disabled"));
-    seasonContainers[this.dataset.seasonNumber].classList.remove("disabled");
+    seasonContainers.forEach(seasonContainer => seasonContainer.classList.add("tab-disabled"));
+    seasonContainers[this.dataset.seasonNumber].classList.remove("tab-disabled");
 }
