@@ -49,6 +49,19 @@
                             d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z"
                             fill="white" />
                     </svg>
+                    <div class="drop-menu">
+                        <h3 class="drop-menu-profile">
+                            Profile
+                        </h3>
+                        <div class="drop-menu-items">
+                          <p class="drop-menu-item">
+                            Log In
+                        </p>
+                        <p class="drop-menu-item">
+                            Register
+                        </p>  
+                        </div>
+                    </div>
                 </div>
                 <div class="burger-button">
                     <span class="burger-button-lines">
@@ -187,7 +200,7 @@
                                         (and her family) exploring how the Windsors have evolved and thrived as the
                                         modern
                                         world has changed around them.</p>
-                                    <button class="button-primary button-own">Own</button>
+                                    <button class="button-primary button-buy">Buy</button>
                                 </div>
                                 <img class="book-img" src="Books/book4.png" alt="book">
                             </div>
@@ -369,29 +382,34 @@
                     <div class="buy-a-card disabled">
                         <div class="buy-a-card-wrapper">
                             <div class="header-buy-a-card">
-                                <h2 class="">Buy a library card</h2>
+                                <h2>Buy a library card</h2>
                                 <button class="cross-header-buy-a-card"></button>
                             </div>
                             <div class="payment-description">
                                 <div class="payment-input">
                                     <h3 class="payment-input-title">Bank card number</h3>
                                     <input type="text" class="input-text-buy-a-card">
-                                    <h3>Expiration code</h3>
+                                    <h3 class="payment-input-title">Expiration code</h3>
+                                    <div class="two-input-text-expiration-code">
+                                        <input type="text" class="input-text-buy-a-card input-text-expiration-code">
+                                        <input type="text" class="input-text-buy-a-card input-text-expiration-code">
+                                    </div>
+                                    <h3 class="payment-input-title">CVC</h3>
                                     <input type="text" class="input-text-buy-a-card input-text-expiration-code">
-                                    <input type="text" class="input-text-buy-a-card input-text-expiration-code">
-                                    <h3>CVC</h3>
-                                    <input type="text" class="input-text-buy-a-card input-text-expiration-code">
-                                    <h3>Cardholder name</h3>
+                                    <h3 class="payment-input-title cardholder-name">Cardholder name</h3>
                                     <input type="text" class="input-text-buy-a-card">
-                                    <h3>Postal code</h3>
+                                    <h3 class="payment-input-title">Postal code</h3>
                                     <input type="text" class="input-text-buy-a-card">
-                                    <h3>City / Town</h3>
+                                    <h3 class="payment-input-title">City / Town</h3>
                                     <input type="text" class="input-text-buy-a-card">
-                                    <button class="button-primary button-buy">Buy</button>
-                                    <h2>$ 25.00</h2>
+                                    <div class="price-wrapper">
+                                        <button class="button-primary payment-button-buy">Buy</button>
+                                        <h2 class="payment-price">$ 25.00</h2>
+                                    </div>
                                 </div>
                                 <div class="buy-a-card-discription">
-                                    <p>If you are live, work, attend school, or pay property taxes in New York State,
+                                    <p class="text-buy-a-card-description">If you are live, work, attend school, or pay
+                                        property taxes in New York State,
                                         you can get a $25 digital library card right now using this online form.
                                         Visitors to New York State can also use this form to apply for a temporary card.
                                     </p>
@@ -399,6 +417,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="buy-a-card-overlay"></div>
                 </div>
             </section>
             <section id="section-coffee-shop">

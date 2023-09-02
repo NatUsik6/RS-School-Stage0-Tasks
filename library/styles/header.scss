@@ -38,7 +38,8 @@ header {
     height: 100vh;
     z-index: 1;
 
-    .burger-menu-open & {
+    .burger-menu-open &,
+    .drop-menu-open & {
         visibility: visible;
         opacity: 1;
         width: 100vw;
@@ -84,6 +85,60 @@ header {
         transition: .3s;
         color: #BB945F;
     }
+}
+
+.icon-profile {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.drop-menu {
+    width: 80px;
+    height: 115px;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    top: 28px;
+    background-color: #fff;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    .drop-menu-open & {
+        display: flex;
+    }
+}
+
+.drop-menu-profile {
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 5px;
+
+    &::after {
+        width: 40px;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.drop-menu-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.drop-menu-item{
+    font-size: 15px;
+    line-height: 20px;
+    cursor: pointer;
 }
 
 .burger-button {

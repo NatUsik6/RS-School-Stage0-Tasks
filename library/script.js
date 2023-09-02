@@ -1,10 +1,26 @@
 const burgerButton = document.querySelector(".burger-button");
 burgerButton.addEventListener("click", toggleBurgerMenuOpen);
+const iconProfile = document.querySelector(".icon-profile");
+iconProfile.addEventListener("click", toggleDropMenuOpen);
 
 function toggleBurgerMenuOpen() {
     const header = document.querySelector("header");
     header.classList.toggle("burger-menu-open");
-    document.body.style.overflow = document.body.style.overflow === "hidden" ? "" : "hidden";
+    if (header.classList.contains("drop-menu-open")) {
+        header.classList.remove("drop-menu-open");
+    } else {
+        document.body.style.overflow = document.body.style.overflow === "hidden" ? "" : "hidden";
+    }
+}
+
+function toggleDropMenuOpen() {
+    const header = document.querySelector("header");
+    header.classList.toggle("drop-menu-open");
+    if (header.classList.contains("burger-menu-open")) {
+        header.classList.remove("burger-menu-open");
+    } else {
+        document.body.style.overflow = document.body.style.overflow === "hidden" ? "" : "hidden";
+    }
 }
 
 const navLinks = document.querySelectorAll(".nav-link");
@@ -12,15 +28,19 @@ navLinks.forEach(navLink => navLink.addEventListener("click", disableBurgerMenuO
 
 function disableBurgerMenuOpen() {
     const header = document.querySelector("header");
-    if (header.classList.contains("burger-menu-open")) {
-        header.classList.remove("burger-menu-open")
-    }
+    header.classList.remove("burger-menu-open");
+    document.body.style.overflow = "";
+}
 
+function disableDropMenuOpen() {
+    const header = document.querySelector("header");
+    header.classList.remove("drop-menu-open");
     document.body.style.overflow = "";
 }
 
 const overlay = document.querySelector(".overlay");
 overlay.addEventListener("click", disableBurgerMenuOpen);
+overlay.addEventListener("click", disableDropMenuOpen);
 
 const arrowLeft = document.querySelector(".arrow-left")
 arrowLeft.addEventListener("click", moveSliderLeft);

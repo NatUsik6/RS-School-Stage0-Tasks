@@ -175,13 +175,18 @@
 .buy-a-card {
     width: 650px;
     height: 540px;
+    position: absolute;
+    background-color: #fff;
+    z-index: 5;
 }
 
 .header-buy-a-card {
     background-color: #0C0C0E;
     display: flex;
-    justify-content: space-between;
-
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    position: relative;
 
     h2 {
         color: #fff;
@@ -189,11 +194,102 @@
         line-height: 20px;
         letter-spacing: 0.8px;
         text-transform: uppercase;
+        height: auto;
+
+        &::after {
+            display: none;
+        }
     }
+}
+
+.cross-header-buy-a-card {
+    width: 15px;
+    height: 15px;
+    border: 0;
+    border-radius: 0;
+    background: url(../assets/close_btn.svg);
+    background-size: cover;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+.payment-description {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 30px 40px 40px;
 }
 
 .payment-input {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 200px;
+}
+
+.payment-input-title {
+    height: auto;
+    font-family: Inter;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    text-transform: none;
+
+    &::after {
+        display: none;
+    }
+}
+
+.cardholder-name {
+    margin-top: 10px;
+}
+
+.input-text-buy-a-card {
+    height: 20px;
+    border: 1px solid #BB945F;
+}
+
+.input-text-expiration-code {
+    width: 45px;
+}
+
+.two-input-text-expiration-code {
+    display: flex;
+    gap: 10px;
+}
+
+.price-wrapper {
+    display: flex;
+    gap: 25px;
+    align-items: end;
+    margin-top: 10px;
+}
+
+.payment-price {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    height: auto;
+
+    &::after {
+        display: none;
+    }
+}
+
+.text-buy-a-card-description {
+    color: #8E8E8E;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    width: 330px;
+    text-align: left;
+}
+
+.payment-button-buy {
+    color: #0C0C0E;
+    border-color: #0C0C0E;
 }
