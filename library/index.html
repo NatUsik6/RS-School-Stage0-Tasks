@@ -43,23 +43,48 @@
                         <li class="nav-item"><a class="nav-link" href="#section-library-card">Library Card</a></li>
                     </ul>
                 </nav>
-                <div class="icon-profile">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z"
-                            fill="white" />
-                    </svg>
+                <div class="profile-menu">
+                    <div class="icon-profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z"
+                                fill="white" />
+                        </svg>
+                    </div>
                     <div class="drop-menu">
                         <h3 class="drop-menu-profile">
                             Profile
                         </h3>
                         <div class="drop-menu-items">
-                          <p class="drop-menu-item">
-                            Log In
-                        </p>
-                        <p class="drop-menu-item">
-                            Register
-                        </p>  
+                            <p class="drop-menu-item">
+                                Log In
+                            </p>
+                            <p class="drop-menu-item" id="drop-menu-register-button">
+                                Register
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="register-container">
+                    <div class="register-wrapper">
+                        <div class="register-header">
+                            <h3 class="register-title">Register</h3>
+                            <button class="register-cross"></button>
+                        </div>
+                        <form name="register-form" class="register-form">
+                            <label class="register-form-label" for="first-name-input">First name</label>
+                            <input class="register-form-input" type="text" id="first-name-input" name="first-name" required>
+                            <label class="register-form-label" for="last-name-input">Last name</label>
+                            <input class="register-form-input" type="text" id="last-name-input" name="last-name" required>
+                            <label class="register-form-label" for="email-input">E-mail</label>
+                            <input class="register-form-input" type="email" id="email-input" name="email" required>
+                            <label class="register-form-label" for="password-input">Password</label>
+                            <input class="register-form-input" type="password" id="password-input" name="password" minlength="8" required>
+                            <button class="button-primary button-register-sign-up" type="submit">Sign Up</button>
+                        </form>
+                        <div class="have-an-account-wrapper">
+                            <p class="have-an-account-text">Already have an account?</p>
+                            <a class="login-in-registration">Login</a>
                         </div>
                     </div>
                 </div>
@@ -67,6 +92,7 @@
                     <span class="burger-button-lines">
                 </div>
                 <div class="overlay"></div>
+                <div class="modal-overlay"></div>
             </div>
         </div>
 
@@ -380,7 +406,7 @@
                         </div>
                     </div>
                     <div class="buy-a-card disabled">
-                        <div class="buy-a-card-wrapper">
+                        <div class="buy-a-card-wrap per">
                             <div class="header-buy-a-card">
                                 <h2>Buy a library card</h2>
                                 <button class="cross-header-buy-a-card"></button>

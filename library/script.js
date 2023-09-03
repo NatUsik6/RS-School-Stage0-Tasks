@@ -1,3 +1,13 @@
+document.addEventListener("readystatechange", onDocumentLoaded);
+
+function onDocumentLoaded() {
+    if (document.readyState === "interactive" && localStorage.getItem("is-user-authorized")) {
+        iconProfile.innerHTML = `<div class="profile-initials-wrapper"><p class="profile-initials">${localStorage.getItem("first-name")[0] + localStorage.getItem("last-name")[0]}</p></div>`;
+    }
+}
+
+// HEADER
+
 const burgerButton = document.querySelector(".burger-button");
 burgerButton.addEventListener("click", toggleBurgerMenuOpen);
 const iconProfile = document.querySelector(".icon-profile");
@@ -38,9 +48,46 @@ function disableDropMenuOpen() {
     document.body.style.overflow = "";
 }
 
+const dropMenuRegisterButton = document.getElementById("drop-menu-register-button");
+dropMenuRegisterButton.addEventListener("click", disableDropMenuOpen);
+dropMenuRegisterButton.addEventListener("click", openRegisterForm);
+
+const buttonSignUp = document.querySelector(".button-sign-up");
+buttonSignUp.addEventListener("click", openRegisterForm);
+
+function openRegisterForm() {
+    const header = document.querySelector("header");
+    header.classList.toggle("register-form-open");
+    document.body.style.overflow = "hidden";
+}
+
+const registerCross = document.querySelector(".register-cross");
+registerCross.addEventListener("click", closeRegisterForm);
+
+function closeRegisterForm() {
+    const header = document.querySelector("header");
+    header.classList.remove("register-form-open");
+    document.body.style.overflow = "";
+}
+
+document.forms["register-form"].addEventListener("submit", setUserInfo);
+
+function setUserInfo() {
+    localStorage.setItem("first-name", this["first-name"].value);
+    localStorage.setItem("last-name", this["last-name"].value);
+    localStorage.setItem("email", this["email"].value);
+    localStorage.setItem("password", this["password"].value);
+    localStorage.setItem("is-user-authorized", true);
+}
+
 const overlay = document.querySelector(".overlay");
 overlay.addEventListener("click", disableBurgerMenuOpen);
 overlay.addEventListener("click", disableDropMenuOpen);
+
+const modalOverlay = document.querySelector(".modal-overlay");
+modalOverlay.addEventListener("click", closeRegisterForm);
+
+// ABOUT SECTION
 
 const arrowLeft = document.querySelector(".arrow-left")
 arrowLeft.addEventListener("click", moveSliderLeft);
