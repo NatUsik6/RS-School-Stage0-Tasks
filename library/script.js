@@ -1,8 +1,15 @@
 document.addEventListener("readystatechange", onDocumentLoaded);
 
 function onDocumentLoaded() {
-    if (document.readyState === "interactive" && localStorage.getItem("is-user-authorized")) {
-        iconProfile.innerHTML = `<div class="profile-initials-wrapper"><p class="profile-initials">${localStorage.getItem("first-name")[0] + localStorage.getItem("last-name")[0]}</p></div>`;
+    if (document.readyState === "interactive") {
+        if (localStorage.getItem("is-user-authorized") == "true") {
+            iconProfile.innerHTML = `<div class="profile-initials-wrapper" title="${localStorage.getItem("first-name")} ${localStorage.getItem("last-name")}"><p class="profile-initials">${localStorage.getItem("first-name")[0] + localStorage.getItem("last-name")[0]}</p></div>`;
+            document.getElementById("drop-menu-my-profile-button").classList.remove("disabled");
+            document.getElementById("drop-menu-log-out-button").classList.remove("disabled");
+        } else {
+            document.getElementById("drop-menu-log-in-button").classList.remove("disabled");
+            document.getElementById("drop-menu-register-button").classList.remove("disabled");
+        }
     }
 }
 
@@ -51,6 +58,14 @@ function disableDropMenuOpen() {
 const dropMenuRegisterButton = document.getElementById("drop-menu-register-button");
 dropMenuRegisterButton.addEventListener("click", disableDropMenuOpen);
 dropMenuRegisterButton.addEventListener("click", openRegisterForm);
+
+const buttonLogOut = document.getElementById("drop-menu-log-out-button");
+buttonLogOut.addEventListener("click", logOut);
+
+function logOut() {
+    localStorage.setItem("is-user-authorized", false);
+    location.reload();
+}
 
 const buttonSignUp = document.querySelector(".button-sign-up");
 buttonSignUp.addEventListener("click", openRegisterForm);
