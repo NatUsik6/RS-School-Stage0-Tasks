@@ -4,6 +4,7 @@ function onDocumentLoaded() {
     if (document.readyState === "interactive") {
         if (localStorage.getItem("is-user-authorized") == "true") {
             iconProfile.innerHTML = `<div class="profile-initials-wrapper" title="${localStorage.getItem("first-name")} ${localStorage.getItem("last-name")}"><p class="profile-initials">${localStorage.getItem("first-name")[0] + localStorage.getItem("last-name")[0]}</p></div>`;
+            document.querySelector(".numbers-of-card-number").textContent = localStorage.getItem("card-number");
             document.getElementById("drop-menu-my-profile-button").classList.remove("disabled");
             document.getElementById("drop-menu-log-out-button").classList.remove("disabled");
         } else {
@@ -85,6 +86,25 @@ function closeRegisterForm() {
     document.body.style.overflow = "";
 }
 
+const dropMenuMyProfileButton = document.getElementById("drop-menu-my-profile-button");
+dropMenuMyProfileButton.addEventListener("click", disableDropMenuOpen);
+dropMenuMyProfileButton.addEventListener("click", openMyProfile);
+
+function openMyProfile() {
+    const header = document.querySelector("header");
+    header.classList.toggle("my-profile-open");
+    document.body.style.overflow = "hidden";
+}
+
+const myProfileCross = document.querySelector(".my-profile-cross");
+myProfileCross.addEventListener("click", closeMyProfile);
+
+function closeMyProfile() {
+    const header = document.querySelector("header");
+    header.classList.remove("my-profile-open");
+    document.body.style.overflow = "";
+}
+
 document.forms["register-form"].addEventListener("submit", setUserInfo);
 
 function setUserInfo() {
@@ -93,6 +113,13 @@ function setUserInfo() {
     localStorage.setItem("email", this["email"].value);
     localStorage.setItem("password", this["password"].value);
     localStorage.setItem("is-user-authorized", true);
+
+    const minNumber = 4294967296;
+    const maxNumber = 68719476735;
+
+    let randomNumber = Math.ceil(Math.random() * (maxNumber - minNumber) + minNumber);
+    let hexNumber = randomNumber.toString(16).toUpperCase();
+    localStorage.setItem("card-number", hexNumber);
 }
 
 const overlay = document.querySelector(".overlay");
@@ -101,6 +128,7 @@ overlay.addEventListener("click", disableDropMenuOpen);
 
 const modalOverlay = document.querySelector(".modal-overlay");
 modalOverlay.addEventListener("click", closeRegisterForm);
+modalOverlay.addEventListener("click", closeMyProfile);
 
 // ABOUT SECTION
 
