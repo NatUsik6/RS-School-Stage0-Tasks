@@ -97,6 +97,26 @@
                         </div>
                     </div>
                 </div>
+                <div class="log-in-container">
+                    <div class="log-in-wrapper">
+                        <div class="log-in-header">
+                            <h3 class="log-in-title">Login</h3>
+                            <button class="log-in-cross"></button>
+                        </div>
+                        <form name="log-in-form" class="log-in-form">
+                            <label class="log-in-form-label" for="log-in-email-input">E-mail or readers card</label>
+                            <input class="log-in-form-input" type="text" id="log-in-email-input" name="email" required>
+                            <label class="log-in-form-label" for="log-in-password-input">Password</label>
+                            <input class="log-in-form-input" type="password" id="log-in-password-input" name="password"
+                                minlength="8" required>
+                            <button class="button-primary button-submit-log-in" type="submit">Log In</button>
+                        </form>
+                        <div class="dont-have-an-account-wrapper">
+                            <p class="dont-have-an-account-text">Don’t have an account?</p>
+                            <a class="register-in-log-in">Register</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="profile-container">
                     <div class="initials-part">
                         <div class="avatar-container">
@@ -139,7 +159,7 @@
                             <div class="card-number-container">
                                 <p class="card-number-title">Card number</p>
                                 <p class="numbers-of-card-number">F00234030</p>
-                                <img class="button-copy" src="assets/icon_copy.svg" alt="icon-copy">
+                                <img class="copy-card-number" src="assets/icon_copy.svg" alt="icon-copy">
                             </div>
                         </div>
                     </div>
@@ -617,12 +637,29 @@
                                 <div class="gold-board">
                                     <p class="gold-board-title">Brooklyn Public Library</p>
                                     <div class="common-input-text-container">
-                                        <input type="text" class="input-text" id="reader's-name"
+                                        <input type="text" class="input-text" id="readers-name"
                                             placeholder="Reader's name">
                                         <input type="text" class="input-text" id="card-name" placeholder="Card number">
                                     </div>
                                 </div>
-                                <button class="button-primary button-check">Check the card</button>
+                                <button class="button-primary button-check disabled">Check the card</button>
+                                <div class="cards-profile library-cards disabled">
+                                    <div class="visits-info card-profile">
+                                        <p class="cards-profile-title">visits</p>
+                                        <img class="card-profile-image" src="assets/Union.svg" alt="union">
+                                        <p class="numbers-in-cards-profile">23</p>
+                                    </div>
+                                    <div class="bonusese-info card-profile">
+                                        <p class="cards-profile-title">bonuses</p>
+                                        <img class="card-profile-image" src="assets/Star_1.svg" alt="star">
+                                        <p class="numbers-in-cards-profile">1240</p>
+                                    </div>
+                                    <div class="book-info card-profile">
+                                        <p class="cards-profile-title">Books</p>
+                                        <img class="card-profile-image" src="assets/book.svg" alt="book">
+                                        <p class="numbers-in-cards-profile">2</p>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                         <div class="get-card-container">
@@ -630,8 +667,9 @@
                             <p class="get-card-description">You will be able to see a reader card after logging into
                                 account or you can register a new account</p>
                             <div class="library-card-button">
-                                <button class="button-primary button-sign-up">Sign Up</button>
-                                <button class="button-primary button-log-in">Log in</button>
+                                <button class="button-primary button-sign-up disabled">Sign Up</button>
+                                <button class="button-primary button-log-in disabled">Log in</button>
+                                <button class="button-primary button-profile disabled">Profile</button>
                             </div>
                         </div>
                     </div>

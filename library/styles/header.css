@@ -54,7 +54,7 @@ header {
   background: rgba(41, 41, 41, 0.6);
   transition: 1s;
 }
-.register-form-open .modal-overlay, .my-profile-open .modal-overlay {
+.register-form-open .modal-overlay, .my-profile-open .modal-overlay, .log-in-form-open .modal-overlay {
   visibility: visible;
   opacity: 1;
   width: 100vw;
@@ -162,6 +162,11 @@ header {
   bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.card-number-in-profile {
+  font-size: 10px;
+  letter-spacing: 1px;
 }
 
 .drop-menu-items {
@@ -273,6 +278,106 @@ header {
   line-height: normal;
   letter-spacing: 1px;
   text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.log-in-container {
+  width: 250px;
+  height: 262px;
+  background-color: #FFF;
+  position: fixed;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: -100%;
+  transition: 1s;
+}
+.log-in-form-open .log-in-container {
+  left: 50%;
+}
+
+.log-in-wrapper {
+  margin: 20px 25px;
+}
+
+.log-in-title {
+  text-align: center;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+.log-in-title::after {
+  display: none;
+}
+
+.log-in-cross {
+  background: url(../assets/close_btn_black.svg);
+  width: 15px;
+  height: 15px;
+  border: 0;
+  border-radius: 0;
+  background-size: cover;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.log-in-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.log-in-form-label {
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+}
+
+.log-in-form-input {
+  width: 200px;
+  height: 20px;
+  border: 1px solid #BB945F;
+}
+
+.button-submit-log-in {
+  margin-top: 10px;
+  padding: 8px 13.5px;
+}
+
+.dont-have-an-account-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.dont-have-an-account-text {
+  color: #000;
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.register-in-log-in {
+  color: #0C0C0E;
+  text-align: center;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-decoration-line: underline;
+  cursor: pointer;
 }
 
 .profile-container {
@@ -438,7 +543,7 @@ header {
   line-height: 20px;
 }
 
-.button-copy {
+.copy-card-number {
   width: 13.31px;
   height: 12px;
   cursor: pointer;

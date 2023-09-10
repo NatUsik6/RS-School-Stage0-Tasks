@@ -7,11 +7,32 @@ function onDocumentLoaded() {
             document.querySelector(".numbers-of-card-number").textContent = localStorage.getItem("card-number");
             document.getElementById("drop-menu-my-profile-button").classList.remove("disabled");
             document.getElementById("drop-menu-log-out-button").classList.remove("disabled");
+            document.querySelector(".initial-letters").textContent = localStorage.getItem("first-name")[0] + localStorage.getItem("last-name")[0];
+            document.querySelector(".initials-decoding").textContent = `${localStorage.getItem("first-name")} ${localStorage.getItem("last-name")}`;
+
+            const dropMenuProfileText = document.querySelector(".drop-menu-profile");
+            dropMenuProfileText.textContent = localStorage.getItem("card-number");
+            dropMenuProfileText.classList.add("card-number-in-profile");
+
+            setDigitalLibraryCardData();
         } else {
             document.getElementById("drop-menu-log-in-button").classList.remove("disabled");
             document.getElementById("drop-menu-register-button").classList.remove("disabled");
+            document.querySelector(".button-sign-up").classList.remove("disabled");
+            document.querySelector(".button-log-in").classList.remove("disabled");
+            document.querySelector(".button-check").classList.remove("disabled");
         }
     }
+}
+
+function setDigitalLibraryCardData() {
+    document.querySelector(".find-card-library-title").textContent = "Your Library card";
+    document.querySelector(".get-card-title").textContent = "Visit your profile";
+    document.querySelector(".get-card-description").textContent = "With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.";
+    document.querySelector(".button-profile").classList.remove("disabled");
+    document.getElementById("readers-name").value = `${localStorage.getItem("first-name")} ${localStorage.getItem("last-name")}`;
+    document.getElementById("card-name").value = localStorage.getItem("card-number");
+    document.querySelector(".library-cards").classList.remove("disabled");
 }
 
 // HEADER
@@ -65,11 +86,43 @@ buttonLogOut.addEventListener("click", logOut);
 
 function logOut() {
     localStorage.setItem("is-user-authorized", false);
+    document.getElementById("readers-name").value = null;
+    document.getElementById("card-name").value = null;
     location.reload();
 }
 
+const dropMenuLogInButton = document.getElementById("drop-menu-log-in-button");
+dropMenuLogInButton.addEventListener("click", disableDropMenuOpen);
+dropMenuLogInButton.addEventListener("click", openLogInForm);
+
+function openLogInForm() {
+    const header = document.querySelector("header");
+    header.classList.toggle("log-in-form-open");
+    document.body.style.overflow = "hidden";
+}
+
+const logInCross = document.querySelector(".log-in-cross");
+logInCross.addEventListener("click", closeLogInForm);
+
+function closeLogInForm() {
+    const header = document.querySelector("header");
+    header.classList.remove("log-in-form-open");
+    document.body.style.overflow = "";
+}
+
+const loginInRegistration = document.querySelector(".login-in-registration");
+loginInRegistration.addEventListener("click", closeRegisterForm);
+loginInRegistration.addEventListener("click", openLogInForm);
+
+const registerInLogIn = document.querySelector(".register-in-log-in");
+registerInLogIn.addEventListener("click", closeLogInForm);
+registerInLogIn.addEventListener("click", openRegisterForm);
+
 const buttonSignUp = document.querySelector(".button-sign-up");
 buttonSignUp.addEventListener("click", openRegisterForm);
+
+const buttonLogIn = document.querySelector(".button-log-in");
+buttonLogIn.addEventListener("click", openLogInForm);
 
 function openRegisterForm() {
     const header = document.querySelector("header");
@@ -105,6 +158,13 @@ function closeMyProfile() {
     document.body.style.overflow = "";
 }
 
+const copyCardNumberButton = document.querySelector(".copy-card-number");
+copyCardNumberButton.addEventListener("click", copyCardNumber);
+
+function copyCardNumber() {
+    navigator.clipboard.writeText(localStorage.getItem("card-number"));
+}
+
 document.forms["register-form"].addEventListener("submit", setUserInfo);
 
 function setUserInfo() {
@@ -122,6 +182,17 @@ function setUserInfo() {
     localStorage.setItem("card-number", hexNumber);
 }
 
+document.forms["log-in-form"].addEventListener("submit", logInUser);
+
+function logInUser() {
+    if (this["email"].value == localStorage.getItem("email")
+        || this["email"].value == localStorage.getItem("card-number")) {
+        if (this["password"].value == localStorage.getItem("password")) {
+            localStorage.setItem("is-user-authorized", true);
+        }
+    }
+}
+
 const overlay = document.querySelector(".overlay");
 overlay.addEventListener("click", disableBurgerMenuOpen);
 overlay.addEventListener("click", disableDropMenuOpen);
@@ -129,6 +200,7 @@ overlay.addEventListener("click", disableDropMenuOpen);
 const modalOverlay = document.querySelector(".modal-overlay");
 modalOverlay.addEventListener("click", closeRegisterForm);
 modalOverlay.addEventListener("click", closeMyProfile);
+modalOverlay.addEventListener("click", closeLogInForm);
 
 // ABOUT SECTION
 
@@ -181,3 +253,36 @@ function changeSeasonTab() {
     seasonContainers.forEach(seasonContainer => seasonContainer.classList.add("tab-disabled"));
     seasonContainers[this.dataset.seasonNumber].classList.remove("tab-disabled");
 }
+
+// FAVORITES SECTION 
+
+const buttonsBuy = document.querySelectorAll(".button-buy");
+buttonsBuy.forEach(buttonBuy => buttonBuy.addEventListener("click", buyBook));
+
+function buyBook() {
+    if (localStorage.getItem("is-user-authorized") != "true") {
+        openLogInForm();
+        return;
+    }
+
+    // Buy book logic
+}
+
+// LIBRARY CARD SECTION 
+
+const buttonProfile = document.querySelector(".button-profile");
+buttonProfile.addEventListener("click", openMyProfile);
+
+const buttonCheckCard = document.querySelector(".button-check");
+buttonCheckCard.addEventListener("click", checkCard);
+
+function checkCard(event) {
+    event.preventDefault();
+
+    if (document.getElementById("readers-name").value == `${localStorage.getItem("first-name")} ${localStorage.getItem("last-name")}`
+        && document.getElementById("card-name").value == localStorage.getItem("card-number")) {
+        console.log("bl");
+    }
+}
+
+alert ("Не проверяйте, пожалуйста до среды. Мне осталось немножко.) Спасибо!");
