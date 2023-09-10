@@ -71,7 +71,7 @@
     height: 66px;
     border-radius: 10px;
     border: 0;
-    color: #8E8E8E;
+    color: #BB945F;
     font-family: Forum;
     font-size: 30px;
     font-style: normal;
@@ -79,12 +79,29 @@
     line-height: 50px;
     letter-spacing: 0.6px;
     padding: 20px;
+
+    &::placeholder {
+        color: #8E8E8E;
+    }
 }
 
 .button-check {
     font-size: 20px;
     border-radius: 2px;
     padding: 9px 39px;
+}
+
+.library-cards {
+    gap: 35px;
+
+    .card-profile {
+        gap: 0;
+    }
+
+    .cards-profile-title {
+        font-size: 10px;
+        letter-spacing: 0.2px;
+    }
 }
 
 .get-card-container {
@@ -128,4 +145,8 @@
 
 .button-log-in {
     padding: 8px 19px;
+}
+
+.button-profile {
+    padding: 9px 18.5px;
 }
