@@ -28,6 +28,17 @@
 }
 
 .about-images-items {
+  width: 1400px;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 1439px) {
+  .about-images-items {
+    width: 450px;
+  }
+}
+
+.slider-track {
   display: flex;
   gap: 25px;
 }
@@ -56,12 +67,6 @@
 
 .arrow-right {
   background: url(../assets/Carret_Right.svg);
-}
-
-@media screen and (max-width: 1439px) {
-  .images-item {
-    display: none;
-  }
 }
 
 .separate-container {
