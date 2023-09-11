@@ -20,7 +20,6 @@ function onDocumentLoaded() {
             document.getElementById("drop-menu-register-button").classList.remove("disabled");
             document.querySelector(".button-sign-up").classList.remove("disabled");
             document.querySelector(".button-log-in").classList.remove("disabled");
-            document.querySelector(".button-check").classList.remove("disabled");
         }
     }
 }
@@ -32,7 +31,7 @@ function setDigitalLibraryCardData() {
     document.querySelector(".button-profile").classList.remove("disabled");
     document.getElementById("readers-name").value = `${localStorage.getItem("first-name")} ${localStorage.getItem("last-name")}`;
     document.getElementById("card-name").value = localStorage.getItem("card-number");
-    document.querySelector(".library-cards").classList.remove("disabled");
+    document.querySelector(".white-board").classList.add("library-cards-open");
 }
 
 // HEADER
@@ -281,8 +280,12 @@ function checkCard(event) {
 
     if (document.getElementById("readers-name").value == `${localStorage.getItem("first-name")} ${localStorage.getItem("last-name")}`
         && document.getElementById("card-name").value == localStorage.getItem("card-number")) {
-        console.log("bl");
+        const whiteBoard = document.querySelector(".white-board");
+        whiteBoard.classList.add("library-cards-open");
+        setTimeout(() => {
+            whiteBoard.classList.remove("library-cards-open");
+            document.getElementById("readers-name").value = null;
+            document.getElementById("card-name").value = null;
+        }, 10000);
     }
 }
-
-alert ("Не проверяйте, пожалуйста до среды. Мне осталось немножко.) Спасибо!");
