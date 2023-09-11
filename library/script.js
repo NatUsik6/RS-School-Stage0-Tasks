@@ -264,7 +264,25 @@ function buyBook() {
         return;
     }
 
+    if (localStorage.getItem("is-library-card-bought") != "true") {
+        openBuyLibraryCard();
+        return;
+    }
+
     // Buy book logic
+}
+
+function openBuyLibraryCard() {
+    document.getElementById("section-favorites").classList.add("buy-a-card-open");
+}
+
+const crossHeaderBuyCard = document.querySelector(".cross-header-buy-a-card");
+crossHeaderBuyCard.addEventListener("click", closeBuyLibraryCard);
+const buyCardOverlay = document.querySelector(".buy-a-card-overlay");
+buyCardOverlay.addEventListener("click",closeBuyLibraryCard);
+
+function closeBuyLibraryCard() {
+    document.getElementById("section-favorites").classList.remove("buy-a-card-open");
 }
 
 // LIBRARY CARD SECTION 
