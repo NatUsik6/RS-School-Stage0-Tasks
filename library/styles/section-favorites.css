@@ -127,6 +127,11 @@
   position: relative;
 }
 
+.book-title,
+.book-author {
+  background: transparent;
+}
+
 .book-img {
   width: 200px;
   height: 300px;
@@ -162,11 +167,35 @@
 }
 
 .buy-a-card {
-  width: 650px;
+  width: 640px;
   height: 540px;
-  position: absolute;
+  position: fixed;
   background-color: #fff;
   z-index: 5;
+  top: 50%;
+  left: -100%;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+}
+.buy-a-card-open .buy-a-card {
+  left: 50%;
+}
+
+.buy-a-card-overlay {
+  visibility: collapse;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 3;
+  background: rgba(41, 41, 41, 0.6);
+  transition: 1s;
+}
+.buy-a-card-open .buy-a-card-overlay {
+  visibility: visible;
+  opacity: 1;
+  width: 100vw;
 }
 
 .header-buy-a-card {
@@ -199,6 +228,7 @@
   position: absolute;
   top: 25px;
   right: 25px;
+  cursor: pointer;
 }
 
 .payment-description {
@@ -213,6 +243,7 @@
   flex-direction: column;
   gap: 10px;
   width: 200px;
+  align-items: start;
 }
 
 .payment-input-title {
