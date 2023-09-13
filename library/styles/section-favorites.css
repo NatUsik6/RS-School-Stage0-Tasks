@@ -127,6 +127,11 @@
   position: relative;
 }
 
+.book-title,
+.book-author {
+  background: transparent;
+}
+
 .book-img {
   width: 200px;
   height: 300px;
@@ -183,7 +188,7 @@
   top: 0;
   left: 0;
   height: 100vh;
-  z-index: 1;
+  z-index: 3;
   background: rgba(41, 41, 41, 0.6);
   transition: 1s;
 }
@@ -238,6 +243,7 @@
   flex-direction: column;
   gap: 10px;
   width: 200px;
+  align-items: start;
 }
 
 .payment-input-title {
