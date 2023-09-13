@@ -9,19 +9,21 @@ function onDocumentLoaded() {
             document.getElementById("drop-menu-log-out-button").classList.remove("disabled");
             document.querySelector(".initial-letters").textContent = localStorage.getItem("first-name")[0] + localStorage.getItem("last-name")[0];
             document.querySelector(".initials-decoding").textContent = `${localStorage.getItem("first-name")} ${localStorage.getItem("last-name")}`;
+            setDigitalLibraryCardData();
+            fillRentedBooks();
 
             const dropMenuProfileText = document.querySelector(".drop-menu-profile");
             dropMenuProfileText.textContent = localStorage.getItem("card-number");
             dropMenuProfileText.classList.add("card-number-in-profile");
-
-            setDigitalLibraryCardData();
         } else {
             document.getElementById("drop-menu-log-in-button").classList.remove("disabled");
             document.getElementById("drop-menu-register-button").classList.remove("disabled");
             document.querySelector(".button-sign-up").classList.remove("disabled");
             document.querySelector(".button-log-in").classList.remove("disabled");
-            document.querySelector(".button-check").classList.remove("disabled");
         }
+
+        document.querySelectorAll(".visits-count").forEach(element => element.textContent = localStorage.getItem("visits-count"));
+        document.querySelectorAll(".books-count").forEach(element => element.textContent = JSON.parse(localStorage.getItem("books-owned")).length);
     }
 }
 
@@ -32,7 +34,25 @@ function setDigitalLibraryCardData() {
     document.querySelector(".button-profile").classList.remove("disabled");
     document.getElementById("readers-name").value = `${localStorage.getItem("first-name")} ${localStorage.getItem("last-name")}`;
     document.getElementById("card-name").value = localStorage.getItem("card-number");
-    document.querySelector(".library-cards").classList.remove("disabled");
+    document.querySelector(".white-board").classList.add("library-cards-open");
+}
+
+function fillRentedBooks() {
+    let booksOwned = JSON.parse(localStorage.getItem("books-owned"));
+    if (booksOwned === null) {
+        return;
+    }
+
+    for (let bookId of booksOwned) {
+        const book = document.getElementById(bookId);
+        addRentedBook(book);
+
+        const buyBookButton = book.querySelector(".button-buy");
+        buyBookButton.classList.remove("button-buy");
+        buyBookButton.classList.add("button-own");
+        buyBookButton.textContent = "Own";
+        buyBookButton.removeEventListener("click", buyBook);
+    }
 }
 
 // HEADER
@@ -173,6 +193,8 @@ function setUserInfo() {
     localStorage.setItem("email", this["email"].value);
     localStorage.setItem("password", this["password"].value);
     localStorage.setItem("is-user-authorized", true);
+    localStorage.setItem("visits-count", 1);
+    localStorage.setItem("books-owned", JSON.stringify([]));
 
     const minNumber = 4294967296;
     const maxNumber = 68719476735;
@@ -189,6 +211,7 @@ function logInUser() {
         || this["email"].value == localStorage.getItem("card-number")) {
         if (this["password"].value == localStorage.getItem("password")) {
             localStorage.setItem("is-user-authorized", true);
+            localStorage.setItem("visits-count", +localStorage.getItem("visits-count") + 1);
         }
     }
 }
@@ -265,7 +288,51 @@ function buyBook() {
         return;
     }
 
-    // Buy book logic
+    if (localStorage.getItem("is-library-card-bought") != "true") {
+        openBuyLibraryCard();
+        return;
+    }
+
+    this.classList.remove("button-buy");
+    this.classList.add("button-own");
+    this.textContent = "Own";
+    this.removeEventListener("click", buyBook);
+
+    let booksOwned = JSON.parse(localStorage.getItem("books-owned")) ?? [];
+    const bookContainer = this.parentElement.parentElement;
+    booksOwned.push(bookContainer.id);
+    localStorage.setItem("books-owned", JSON.stringify(booksOwned));
+    document.querySelectorAll(".books-count").forEach(element => element.textContent = JSON.parse(localStorage.getItem("books-owned")).length);
+
+    addRentedBook(bookContainer);
+}
+
+function addRentedBook(bookContainer) {
+    const rentedBookItem = document.createElement("li");
+    rentedBookItem.classList.add("rented-books-item");
+    rentedBookItem.textContent = `${bookContainer.querySelector(".book-title").textContent}, ${bookContainer.querySelector(".book-author").textContent}`;
+    document.querySelector(".rented-books-items").appendChild(rentedBookItem);
+}
+
+function openBuyLibraryCard() {
+    document.getElementById("section-favorites").classList.add("buy-a-card-open");
+}
+
+const crossHeaderBuyCard = document.querySelector(".cross-header-buy-a-card");
+crossHeaderBuyCard.addEventListener("click", closeBuyLibraryCard);
+const buyCardOverlay = document.querySelector(".buy-a-card-overlay");
+buyCardOverlay.addEventListener("click", closeBuyLibraryCard);
+
+function closeBuyLibraryCard() {
+    document.getElementById("section-favorites").classList.remove("buy-a-card-open");
+}
+
+document.forms["buy-card-form"].addEventListener("submit", buyCard);
+
+function buyCard(event) {
+    localStorage.setItem("is-library-card-bought", true);
+    closeBuyLibraryCard();
+    event.preventDefault();
 }
 
 // LIBRARY CARD SECTION 
@@ -281,8 +348,12 @@ function checkCard(event) {
 
     if (document.getElementById("readers-name").value == `${localStorage.getItem("first-name")} ${localStorage.getItem("last-name")}`
         && document.getElementById("card-name").value == localStorage.getItem("card-number")) {
-        console.log("bl");
+        const whiteBoard = document.querySelector(".white-board");
+        whiteBoard.classList.add("library-cards-open");
+        setTimeout(() => {
+            whiteBoard.classList.remove("library-cards-open");
+            document.getElementById("readers-name").value = null;
+            document.getElementById("card-name").value = null;
+        }, 10000);
     }
 }
-
-alert ("Не проверяйте, пожалуйста до среды. Мне осталось немножко.) Спасибо!");
