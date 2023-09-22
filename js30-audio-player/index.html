@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="assets/favicon.ico" rel="icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Audio player</title>
 </head>
+
 <body>
-    
+    <main class="main-container">
+        <div class="blur">
+            <div class="player">
+                <div class="player-image"></div>
+                <div class="player-controls">
+                    <div class="description-player-container">
+                        <div class="title-name-container">
+                            <p class="song-name">Sonne</p>
+                            <p class="author-name">Rammstein</p>
+                        </div>
+                        <div class="player-icon-container">
+                            <button class="play-prev player-icon"></button>
+                            <button class="play player-icon"></button>
+                            <button class="play-next player-icon"></button>
+                        </div>
+                    </div>
+                    <input type="range" value="40" min="0" max="100" step="1" class="playback-bar">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer-container">
+
+    </footer>
+
+    <script type="module" src="script.js"></script>
 </body>
+
 </html>

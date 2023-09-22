@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    background-image: url("assets/rammstein_2_02.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.blur {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.player-image {
+    width: 300px;
+    height: 200px;
+    background: url("assets/rammstein_2_02.jpg");
+    background-size: cover;
+}
+
+.player-controls {
+    background-color: #121212;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.description-player-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.player-icon-container {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.player-icon {
+    width: 25px;
+    height: 25px;
+    border: 0;
+    opacity: 0.75;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.play {
+    background: url("assets/play.svg");
+    background-size: cover;
+    width: 35px;
+    height: 35px;
+
+    &.pause {
+        background: url("assets/pause.svg");
+        background-size: cover;
+    }
+}
+
+.author-name {
+    color: #7C7753;
+}
+
+.song-name {
+    color: #CDCD9B;
+}
+
+.play-prev {
+    background: url("assets/play-prev.svg");
+    background-size: cover;
+}
+
+.play-next {
+    background: url("assets/play-next.svg");
+    background-size: cover;
+}
+
+.playback-bar {
+    width: 100%;
+    background: #CDCD9B;
+}
