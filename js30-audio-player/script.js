@@ -8,8 +8,10 @@ let isPlay = false;
 let currentSoundNumber = 0;
 
 const audio = new Audio();
+let timerId;
 
 function playAudio() {
+    clearInterval(timerId);
     if (isPlay) {
         isPlay = false;
         audio.pause();
@@ -20,6 +22,10 @@ function playAudio() {
     audio.src = playList[currentSoundNumber].src;
     audio.currentTime = 0;
     audio.play();
+
+    playbackBar.value = 0;
+    playbackBar.max = audio.duration;
+    timerId = setInterval(() => playbackBar.value++, 1000);
 }
 
 function togglePauseButton() {
@@ -51,3 +57,5 @@ function playNextAudio() {
     isPlay = false;
     playAudio();
 }
+
+const playbackBar = document.querySelector(".playback-bar");
