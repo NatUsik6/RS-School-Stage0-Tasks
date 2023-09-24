@@ -5,7 +5,6 @@
 }
 
 .main-container {
-  background-image: url("assets/rammstein_2_02.jpg");
   background-size: cover;
   height: 100vh;
 }
@@ -31,8 +30,6 @@
 .player-image {
   width: 300px;
   height: 200px;
-  background: url("assets/rammstein_2_02.jpg");
-  background-size: cover;
 }
 
 .player-controls {
@@ -92,6 +89,15 @@
 .play-next {
   background: url("assets/play-next.svg");
   background-size: cover;
+}
+
+.playback-bar-container {
+  display: flex;
+  gap: 7px;
+}
+
+.song-time {
+  color: #CDCD9B;
 }
 
 .playback-bar {
