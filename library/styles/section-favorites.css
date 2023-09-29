@@ -1,0 +1,311 @@
+@media screen and (max-width: 1260px) {
+  #section-favorites form {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #fff;
+  }
+}
+#section-favorites .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+#section-favorites .seasons-selector-title {
+  align-self: start;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.season-radio {
+  accent-color: #000;
+  background-color: #000;
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.season-title {
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 20px;
+  cursor: pointer;
+}
+.season-radio:checked + .season-title {
+  font-weight: 700;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.favorites-items p {
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: left;
+}
+.favorites-items span {
+  text-transform: capitalize;
+  display: block;
+}
+.favorites-items .description-book {
+  color: #000;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.season-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.tab-disabled {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.book-container {
+  position: relative;
+  display: flex;
+  padding: 15px 0 15px 20px;
+  gap: 15px;
+  height: 555px;
+  width: 590px;
+}
+@media screen and (max-width: 1260px) {
+  .book-container {
+    margin: auto;
+  }
+}
+
+.book-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 555px;
+  width: 550px;
+  border: 1px solid #000;
+}
+
+.book-text-wrapper {
+  width: 357px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
+
+.book-title,
+.book-author {
+  background: transparent;
+}
+
+.book-img {
+  width: 200px;
+  height: 300px;
+  align-self: flex-end;
+  margin-right: -40px;
+  margin-bottom: -16px;
+  z-index: 1;
+}
+
+.button-buy {
+  color: #0C0C0E;
+  border-color: #0C0C0E;
+  position: absolute;
+  bottom: 0;
+}
+
+.button-own {
+  padding: 7px 23px;
+  color: #BB945F;
+  border-color: #BB945F;
+  position: absolute;
+  cursor: auto;
+  bottom: 0;
+}
+.button-own:hover {
+  color: #BB945F;
+  border-color: #BB945F;
+  background-color: transparent;
+}
+
+.disabled {
+  display: none;
+}
+
+.buy-a-card {
+  width: 640px;
+  height: 540px;
+  position: fixed;
+  background-color: #fff;
+  z-index: 5;
+  top: 50%;
+  left: -100%;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+}
+.buy-a-card-open .buy-a-card {
+  left: 50%;
+}
+
+.buy-a-card-overlay {
+  visibility: collapse;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 3;
+  background: rgba(41, 41, 41, 0.6);
+  transition: 1s;
+}
+.buy-a-card-open .buy-a-card-overlay {
+  visibility: visible;
+  opacity: 1;
+  width: 100vw;
+}
+
+.header-buy-a-card {
+  background-color: #0C0C0E;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  position: relative;
+}
+.header-buy-a-card h2 {
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  height: auto;
+}
+.header-buy-a-card h2::after {
+  display: none;
+}
+
+.cross-header-buy-a-card {
+  width: 15px;
+  height: 15px;
+  border: 0;
+  border-radius: 0;
+  background: url(../assets/close_btn.svg);
+  background-size: cover;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.payment-description {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 30px 40px 40px;
+}
+
+.payment-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;
+  align-items: start;
+}
+
+.payment-input-title {
+  height: auto;
+  font-family: Inter;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  text-transform: none;
+}
+.payment-input-title::after {
+  display: none;
+}
+
+.cardholder-name {
+  margin-top: 10px;
+}
+
+.input-text-buy-a-card {
+  height: 20px;
+  border: 1px solid #BB945F;
+}
+
+.input-text-expiration-code {
+  width: 45px;
+}
+
+.two-input-text-expiration-code {
+  display: flex;
+  gap: 10px;
+}
+
+.price-wrapper {
+  display: flex;
+  gap: 25px;
+  align-items: end;
+  margin-top: 10px;
+}
+
+.payment-price {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  height: auto;
+}
+.payment-price::after {
+  display: none;
+}
+
+.text-buy-a-card-description {
+  color: #8E8E8E;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  width: 330px;
+  text-align: left;
+}
+
+.payment-button-buy {
+  color: #0C0C0E;
+  border-color: #0C0C0E;
+}/*# sourceMappingURL=section-favorites.css.map */
