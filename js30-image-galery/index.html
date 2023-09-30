@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image gallery</title>
+    <link href="assets/favicon.ico" rel="icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header-container">
+        <div class="search-box">
+            <form class="search-form" name="search-form" autocomplete="off">
+                <input type="text" class="search-form__input" name="search-input" placeholder="Search">
+                <span class="search-form__clear-input-button search-form__button">
+                    <svg class="search-form__clear-input-button__icon search-form__button-icon" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                        </path>
+                    </svg>
+                </span>
+                <button type="submit" class="search-form__submit-button search-form__button">
+                    <svg class="search-form__submit-button__icon search-form__button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </header>
+    <main class="main-container">
+        <div class="gallery"></div>
+    </main>
+    <footer class="footer-container">
+        <div class="container footer">
+            <div>
+                © 2023
+                <a class="github" href="https://github.com/NatUsik6">
+                    NatUsik6
+                </a>
+            </div>
+            <a class="rss" href="https://rs.school/js/">.</a>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
