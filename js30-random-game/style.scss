@@ -4,8 +4,11 @@
     box-sizing: border-box;
 }
 
+$cell-size: 20vmin;
+$cell-gap: 2vmin;
+
 .main-container {
-    background-color: #faf8ef;
+    background-color: #0D1117;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,6 +18,41 @@
 .game-board {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4, 20vmin);
-    grid-template-rows: repeat(4, 20vmin);
+    grid-template-columns: repeat(4, $cell-size);
+    grid-template-rows: repeat(4, $cell-size);
+    gap: $cell-gap;
+    border-radius: 1vmin;
+}
+
+.game-board__cell {
+    background-color: #21262D;
+    border-radius: 1vmin;
+}
+
+.game-board__tile {
+    --y: 1;
+    --x: 2;
+    position: absolute;
+    top: calc(var(--y) * ($cell-size + $cell-gap));
+    left: calc(var(--x) * ($cell-size + $cell-gap));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vmin;
+    height: 20vmin;
+    border-radius: 1vmin;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 7.5vmin;
+    font-weight: bold;
+    background-color: #fff;
+    color: #000;
+    transition: .1s;
+    animation: show .2s;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0.5;
+        transform: scale(0);
+    }
 }
