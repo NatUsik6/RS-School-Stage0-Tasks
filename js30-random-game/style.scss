@@ -44,8 +44,8 @@ $cell-gap: 2vmin;
     font-family: 'Courier New', Courier, monospace;
     font-size: 7.5vmin;
     font-weight: bold;
-    background-color: #fff;
-    color: #000;
+    background-color: hsl(25, 60%, var(--bg-lightness));
+    color: hsl(20, 25%, var(--text-lightness));
     transition: .1s;
     animation: show .2s;
 }
