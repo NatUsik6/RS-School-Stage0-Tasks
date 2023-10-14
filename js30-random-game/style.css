@@ -10,17 +10,28 @@ body {
 
 .main-container {
   background-color: #0D1117;
+  height: 100vh;
+}
+
+.main-wrapper {
+  height: 90vmin;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  flex-direction: column;
+  gap: 2vmin;
+}
+
+.last-scores {
+  color: #9aa0a6;
+  font-size: 3vmin;
 }
 
 .game-board {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 20vmin);
-  grid-template-rows: repeat(4, 20vmin);
+  grid-template-columns: repeat(4, 18vmin);
+  grid-template-rows: repeat(4, 18vmin);
   gap: 2vmin;
   border-radius: 1vmin;
 }
@@ -34,13 +45,13 @@ body {
   --y: 1;
   --x: 2;
   position: absolute;
-  top: calc(var(--y) * 22vmin);
-  left: calc(var(--x) * 22vmin);
+  top: calc(var(--y) * 20vmin);
+  left: calc(var(--x) * 20vmin);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20vmin;
-  height: 20vmin;
+  width: 18vmin;
+  height: 18vmin;
   border-radius: 1vmin;
   font-family: "Courier New", Courier, monospace;
   font-size: 7.5vmin;
@@ -58,6 +69,40 @@ body {
   }
 }
 .footer-container {
-  position: absolute;
+  background-color: rgba(18, 18, 18, 0.5019607843);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 20px;
+  position: fixed;
   bottom: 0;
+  width: 100%;
+}
+
+.github {
+  text-decoration: none;
+  color: #9aa0a6;
+  line-height: 45px;
+  font-size: 20px;
+  font-weight: 300;
+  transition: 0.3s;
+}
+.github:hover {
+  color: white;
+}
+
+.rss {
+  background-image: url(assets/rs_school_js.svg);
+  width: 121px;
+  height: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  color: transparent;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #9aa0a6;
 }/*# sourceMappingURL=style.css.map */

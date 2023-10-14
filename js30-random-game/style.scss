@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-$cell-size: 20vmin;
+$cell-size: 18vmin;
 $cell-gap: 2vmin;
 
 body {
@@ -13,10 +13,21 @@ body {
 
 .main-container {
     background-color: #0D1117;
+    height: 100vh;
+}
+
+.main-wrapper {
+    height: 90vmin;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    flex-direction: column;
+    gap: $cell-gap;
+}
+
+.last-scores {
+    color: #9aa0a6;
+    font-size: 3vmin;
 }
 
 .game-board {
@@ -42,8 +53,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20vmin;
-    height: 20vmin;
+    width: $cell-size;
+    height: $cell-size;
     border-radius: 1vmin;
     font-family: 'Courier New', Courier, monospace;
     font-size: 7.5vmin;
@@ -62,6 +73,40 @@ body {
 }
 
 .footer-container {
-    position: absolute;
+    background-color: #12121280;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    position: fixed;
     bottom: 0;
+    width: 100%;
+}
+
+.github {
+    text-decoration: none;
+    color: #9aa0a6;
+    line-height: 45px;
+    font-size: 20px;
+    font-weight: 300;
+    transition: .3s;
+
+    &:hover {
+        color: white;
+    }
+}
+
+.rss {
+    background-image: url(assets/rs_school_js.svg);
+    width: 121px;
+    height: 45px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    color: transparent;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #9aa0a6;
 }

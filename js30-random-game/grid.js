@@ -24,11 +24,6 @@ export class Grid {
     }
 
     groupCellByColumn() {
-        // return this.cells.reduce((groupedCells, cell) => {
-        //     groupedCells[cell.x] = groupedCells[cell.x] || [];
-        //     groupedCells[cell.x][cell.y] = cell;
-        // }, []);
-
         const groupedCells = [];
         for (let cell of this.cells) {
             groupedCells[cell.x] = groupedCells[cell.x] || [];

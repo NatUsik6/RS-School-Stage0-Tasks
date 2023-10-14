@@ -4,6 +4,7 @@ import { Grid } from "./grid.js";
 import { Tile } from "./tile.js";
 
 const gameBoard = document.querySelector(".game-board");
+displayScore();
 
 const grid = new Grid(gameBoard);
 grid.getRandomEmptyCell().linkTile(new Tile(gameBoard));
@@ -58,8 +59,10 @@ async function handleInput(event) {
 
     if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
         await newTile.waitForAnimationEnd();
-        alert("Try again!");
-        return;
+        const score = getScore();
+        saveScore(score);
+        alert(`Score: ${score}. Try again!`);
+        location.reload();
     }
 
     setupInputOnce();
@@ -157,4 +160,38 @@ function canMoveInGroup(group) {
         const targetCell = group[index - 1];
         return targetCell.canAccept(cell.linkedTile);
     });
+}
+
+function displayScore() {
+    const lastGames = JSON.parse(localStorage.getItem("lastGames"));
+
+    if (lastGames == null) {
+        const lastScoresElement = document.querySelector(".last-scores");
+        lastScoresElement.textContent = "No previous games. :(";
+        return;
+    }
+
+    const lastScoresNumbersElement = document.querySelector(".last-scores__numbers");
+    lastScoresNumbersElement.textContent = lastGames.join(", ");
+}
+
+function getScore() {
+    let maxValue = 0;
+
+    for (let cell of grid.cells) {
+        maxValue = Math.max(cell.linkedTile.value, maxValue);
+    }
+
+    return maxValue;
+}
+
+function saveScore(score) {
+    let lastGames = JSON.parse(localStorage.getItem("lastGames"));
+
+    if (lastGames == null) {
+        lastGames = [];
+    }
+
+    lastGames.push(score);
+    localStorage.setItem("lastGames", JSON.stringify(lastGames.slice(-10)));
 }
