@@ -7,6 +7,10 @@
 $cell-size: 20vmin;
 $cell-gap: 2vmin;
 
+body {
+    position: relative;
+}
+
 .main-container {
     background-color: #0D1117;
     display: flex;
@@ -55,4 +59,9 @@ $cell-gap: 2vmin;
         opacity: 0.5;
         transform: scale(0);
     }
+}
+
+.footer-container {
+    position: absolute;
+    bottom: 0;
 }

@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+}
+
 .main-container {
   background-color: #0D1117;
   display: flex;
@@ -52,4 +56,8 @@
     opacity: 0.5;
     transform: scale(0);
   }
+}
+.footer-container {
+  position: absolute;
+  bottom: 0;
 }/*# sourceMappingURL=style.css.map */
