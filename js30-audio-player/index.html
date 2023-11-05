@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/favicon.ico" rel="icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Audio player</title>
+</head>
+
+<body>
+    <main class="main-container">
+        <div class="blur">
+            <div class="player">
+                <div class="player-image"></div>
+                <div class="player-controls">
+                    <div class="description-player-container">
+                        <div class="title-name-container">
+                            <p class="song-name">Sonne</p>
+                            <p class="author-name">Rammstein</p>
+                        </div>
+                        <div class="player-icon-container">
+                            <button class="play-prev player-icon"></button>
+                            <button class="play player-icon"></button>
+                            <button class="play-next player-icon"></button>
+                        </div>
+                    </div>
+                    <div class="playback-bar-container">
+                        <p class="current-time song-time"></p>
+                        <input type="range" value="0" min="0" max="273" step="1" class="playback-bar">
+                        <p class="song-duration song-time"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer-container">
+        <div class="container footer">
+            <div>
+                © 2023
+                <a class="github" href="https://github.com/NatUsik6">
+                    NatUsik6
+                </a>
+            </div>
+            <a class="rss" href="https://rs.school/js/">.</a>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
